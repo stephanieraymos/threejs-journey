@@ -1,1 +1,1 @@
-console.log("Hello, test")
+const scene = new THREE.Scene()
