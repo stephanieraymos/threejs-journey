@@ -25,3 +25,4 @@ const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
 });
 renderer.setSize(sizes.width, sizes.height);
+renderer.render(scene, camera) // 1. Scene, 2. Camera (Scene from camera point of view)
