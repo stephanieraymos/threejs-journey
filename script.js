@@ -10,7 +10,7 @@ scene.add(mesh);
 //Sizes
 const sizes = {
   width: 800,
-  height: 600
+  height: 600,
 };
 
 // Camera (point of view) * You can have multiple cameras
@@ -19,8 +19,9 @@ const sizes = {
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height); //1. Field of view (deg, vertical), 2. Aspect ratio (how much of viewport the camera will take up)
 scene.add(camera);
 
-const canvas = document.querySelector('.webgl');
-console.log(canvas)
+const canvas = document.querySelector(".webgl");
+console.log(canvas);
 const renderer = new THREE.WebGLRenderer({
-    canvas: canvas,
-})
+  canvas: canvas,
+});
+renderer.setSize(sizes.width, sizes.height);
