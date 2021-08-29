@@ -17,6 +17,7 @@ const sizes = {
 // Perspective Camera: If object is far; it will be small, if close; it will be big
 
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height); //1. Field of view (deg, vertical), 2. Aspect ratio (how much of viewport the camera will take up)
+camera.position.z = 3; // // Increasing postition of z axis to move backward out of the cube. Camera is 3 units away from the origin
 scene.add(camera);
 
 const canvas = document.querySelector(".webgl");
@@ -26,3 +27,4 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.render(scene, camera) // 1. Scene, 2. Camera (Scene from camera point of view)
+
