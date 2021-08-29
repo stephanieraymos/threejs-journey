@@ -16,5 +16,11 @@ const sizes = {
 // Camera (point of view) * You can have multiple cameras
 // Perspective Camera: If object is far; it will be small, if close; it will be big
 
-const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height); //1. Field of view (deg, vertical), 2. Aspect ratio
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height); //1. Field of view (deg, vertical), 2. Aspect ratio (how much of viewport the camera will take up)
 scene.add(camera);
+
+const canvas = document.querySelector('.canvas');
+console.log(canvas)
+const renderer = new THREE.WebGLRenderer({
+    canvas: canvas,
+})
