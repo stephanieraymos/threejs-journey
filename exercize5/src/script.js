@@ -10,14 +10,10 @@ const scene = new THREE.Scene()
 const geometry = new THREE.BoxGeometry(1, 1, 1)
 const material = new THREE.MeshBasicMaterial({ color: 0xff0000 })
 const mesh = new THREE.Mesh(geometry, material)
-
 mesh.position.set(0.7, -0.6, 1) // Setting x, y and z shorthand
-
 scene.add(mesh)
 
-// Axes helper
-const axesHelper = new THREE.AxisHelper(2)
-scene.add(axesHelper)
+mesh.scale.set(2, 0.5, 0.5)
 
 const sizes = {
     width: 800,
@@ -26,8 +22,6 @@ const sizes = {
 
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height)
 camera.position.z = 3
-// camera.position.y = 1
-// camera.position.x = 1
 scene.add(camera)
 
 
