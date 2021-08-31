@@ -15,10 +15,7 @@ scene.add(mesh)
 
 mesh.scale.set(2, 0.5, 0.5)
 
-mesh.rotation.reorder("YXZ")
-mesh.rotation.x = Math.PI / 4
-mesh.rotation.y = Math.PI
-mesh.rotation.z = Math.PI / 2
+
 
 const sizes = {
     width: 800,
@@ -28,6 +25,8 @@ const sizes = {
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height)
 camera.position.z = 3
 scene.add(camera)
+
+camera.lookAt(mesh.position)
 
 
 const renderer = new THREE.WebGLRenderer({
