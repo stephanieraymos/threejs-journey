@@ -28,6 +28,8 @@ const cube3 = new THREE.Mesh(
 cube3.position.x = 2
 group.add(cube3)
 
+group.position.y = 1
+
 const sizes = {
     width: 800,
     height: 600
