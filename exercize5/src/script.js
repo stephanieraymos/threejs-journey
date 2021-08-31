@@ -15,6 +15,8 @@ scene.add(mesh)
 
 mesh.scale.set(2, 0.5, 0.5)
 
+mesh.rotation.y = 3.14159
+
 const sizes = {
     width: 800,
     height: 600
