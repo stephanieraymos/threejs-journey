@@ -15,6 +15,10 @@ mesh.position.set(0.7, -0.6, 1) // Setting x, y and z shorthand
 
 scene.add(mesh)
 
+// Axes helper
+const axesHelper = new THREE.AxisHelper(2)
+scene.add(axesHelper)
+
 const sizes = {
     width: 800,
     height: 600
@@ -22,6 +26,8 @@ const sizes = {
 
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height)
 camera.position.z = 3
+// camera.position.y = 1
+// camera.position.x = 1
 scene.add(camera)
 
 
