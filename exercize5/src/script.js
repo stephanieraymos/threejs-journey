@@ -15,7 +15,10 @@ scene.add(mesh)
 
 mesh.scale.set(2, 0.5, 0.5)
 
-mesh.rotation.y = 3.14159
+mesh.rotation.reorder("YXZ")
+mesh.rotation.x = Math.PI / 4
+mesh.rotation.y = Math.PI
+mesh.rotation.z = Math.PI / 2
 
 const sizes = {
     width: 800,
