@@ -38,8 +38,9 @@ const tick = () => {
   // Clock
   const elapsedTime = clock.getElapsedTime();
   //Update Objects
-  mesh.position.y = Math.sin(elapsedTime);
-  mesh.position.x = Math.cos(elapsedTime);
+  camera.position.y = Math.sin(elapsedTime);
+  camera.position.x = Math.cos(elapsedTime);
+  camera.lookAt(mesh.position)
 
   // Render
   renderer.render(scene, camera);
