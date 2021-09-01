@@ -30,20 +30,17 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(sizes.width, sizes.height);
 
-// Time: Date.now() returns Milliseconds since Jan 1970
-
-let time = Date.now();
+// Clock
+const clock = new THREE.Clock();
 
 // animations
 const tick = () => {
-  // Current ime
-  const currentTime = Date.now();
-  const deltaTime = currentTime - time; // Getting difference
-  time = currentTime; // Updating time for next tick
-
+  // Clock
+  const elapsedTime = clock.getElapsedTime();
+  console.log(elapsedTime)
   //Update Objects
-  mesh.rotation.y += 0.001 * deltaTime;
-  // Making sure cube rotates at same speed regardless of frame rate
+  mesh.rotation.y += 0.01;
+
   // Render
   renderer.render(scene, camera);
 
