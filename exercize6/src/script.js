@@ -31,18 +31,11 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(sizes.width, sizes.height);
 
-// Clock
-const clock = new THREE.Clock();
-
-gsap.to(mesh.position, { duration: 1, delay: 1, x: 2 }); //1. Object to animate, 2. Object that specifies destination
+gsap.to(mesh.position, { duration: 1, delay: 1, x: 2 }); 
+//1. Object to animate
+//2. Options
 // animations
 const tick = () => {
-  // Clock
-  const elapsedTime = clock.getElapsedTime();
-  //Update Objects
-  camera.position.y = Math.sin(elapsedTime);
-  camera.position.x = Math.cos(elapsedTime);
-  camera.lookAt(mesh.position);
 
   // Render
   renderer.render(scene, camera);
