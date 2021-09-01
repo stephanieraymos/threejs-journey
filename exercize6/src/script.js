@@ -33,7 +33,9 @@ renderer.render(scene, camera);
 
 // animations
 const tick = () => {
-  console.log("tick");
+//   console.log("tick");
+  window.requestAnimationFrame(tick);
+  // 60 Ticks per second if computer is at 60 FPS
 };
 
 tick();
