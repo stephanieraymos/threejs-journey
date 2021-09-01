@@ -42,7 +42,7 @@ const tick = () => {
   time = currentTime; // Updating time for next tick
 
   //Update Objects
-  mesh.rotation.y += 0.01;
+  mesh.rotation.y += 0.001 * deltaTime;
   // Render
   renderer.render(scene, camera);
 
