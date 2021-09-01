@@ -43,6 +43,7 @@ const tick = () => {
 
   //Update Objects
   mesh.rotation.y += 0.001 * deltaTime;
+  // Making sure cube rotates at same speed regardless of frame rate
   // Render
   renderer.render(scene, camera);
 
