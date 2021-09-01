@@ -30,10 +30,19 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(sizes.width, sizes.height);
 
+// Time: Date.now() returns Milliseconds since Jan 1970
+
+let time = Date.now();
+
 // animations
 const tick = () => {
+  // Current ime
+  const currentTime = Date.now();
+  const deltaTime = currentTime - time; // Getting difference
+  time = currentTime; // Updating time for next tick
+
   //Update Objects
-  mesh.rotation.y += 0.01
+  mesh.rotation.y += 0.01;
   // Render
   renderer.render(scene, camera);
 
