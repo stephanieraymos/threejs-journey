@@ -8,7 +8,8 @@ const cursor = {
 };
 
 window.addEventListener("mousemove", (event) => {
-  cursor.x = event.clientX / sizes.width;
+  cursor.x = event.clientX / sizes.width - 0.5
+  
   console.log(cursor.x);
 });
 
