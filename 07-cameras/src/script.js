@@ -8,9 +8,10 @@ const cursor = {
 };
 
 window.addEventListener("mousemove", (event) => {
-  cursor.x = event.clientX / sizes.width - 0.5
-  
-  console.log(cursor.x);
+  cursor.x = event.clientX / sizes.width - 0.5;
+  cursor.y = event.clientY / sizes.height - 0.5;
+
+  console.log(cursor.y);
 });
 
 // Canvas
