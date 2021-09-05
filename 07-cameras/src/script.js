@@ -2,8 +2,14 @@ import "./style.css";
 import * as THREE from "three";
 
 // Cursor
+const cursor = {
+  x: 0,
+  y: 0,
+};
+
 window.addEventListener("mousemove", (event) => {
-  console.log(event.clientX);
+  cursor.x = event.clientX;
+  console.log(cursor.x);
 });
 
 // Canvas
