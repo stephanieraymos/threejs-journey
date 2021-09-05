@@ -2,6 +2,9 @@ import "./style.css";
 import * as THREE from "three";
 
 // Cursor
+window.addEventListener("mousemove", (event) => {
+  console.log(event.clientX);
+});
 
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
