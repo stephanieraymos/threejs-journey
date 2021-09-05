@@ -92,6 +92,7 @@ const tick = () => {
   //|------------------------|
   camera.position.x = cursor.x * 3
   camera.position.y = cursor.y * 3
+  camera.lookAt(new THREE.Vector3())
 
   // Render
   renderer.render(scene, camera);
