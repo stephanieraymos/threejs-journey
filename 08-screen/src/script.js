@@ -43,9 +43,9 @@ window.addEventListener("resize", () => {
 
 window.addEventListener("dblclick", () => {
   if (!document.fullscreenElement) {
-    console.log("Go fullscreen");
+    canvas.requestFullscreen();
   } else {
-    console.log("Leave fullscreen");
+    document.exitFullscreen();
   }
 });
 
