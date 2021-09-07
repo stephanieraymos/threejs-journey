@@ -75,6 +75,9 @@ scene.add(camera);
 //|------- Controls -------|
 //|------------------------|
 const controls = new OrbitControls(camera, canvas);
+controls.enableDamping = true;
+// controls.target.y = 2
+// controls.update()
 
 //|------------------------|
 //|------- Renderer -------|
@@ -94,7 +97,9 @@ const tick = () => {
 
   // Update objects
   // mesh.rotation.y = elapsedTime;
-
+  
+  // Update Controls
+  controls.update();
   // Render
   renderer.render(scene, camera);
 
