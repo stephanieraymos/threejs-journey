@@ -3,9 +3,16 @@
   padding: 0;
 }
 
+html,
+body {
+  /* Preventing scroll to go beyond bottom or top when scroll or zoom */
+  overflow: hidden;
+}
+
 /* Targeting canvas to get rid of scroll bar */
 .webgl {
   position: fixed;
   top: 0;
   left: 0;
+  outline: none;
 }
