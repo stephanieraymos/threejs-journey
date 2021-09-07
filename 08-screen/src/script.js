@@ -36,7 +36,7 @@ window.addEventListener("resize", () => {
   camera.aspect = sizes.width / sizes.height;
   camera.updateProjectionMatrix();
 
-  // Update renderer
+  // Update renderer (which will update the canvas)
   renderer.setSize(sizes.width, sizes.height);
 });
 
@@ -64,6 +64,7 @@ const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
 });
 renderer.setSize(sizes.width, sizes.height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 /**
  * Animate
