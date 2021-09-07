@@ -29,7 +29,12 @@ const sizes = {
 
 // Listen for resize screen changes
 window.addEventListener("resize", () => {
-  console.log("window has been resized");
+  sizes.width = window.innerWidth;
+  sizes.height = window.innerHeight;
+
+  // Update camera aspect
+  camera.aspect = sizes.width / sizes.height;
+  camera.updateProjectionMatrix();
 });
 
 /**
