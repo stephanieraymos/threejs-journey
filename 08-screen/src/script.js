@@ -35,6 +35,9 @@ window.addEventListener("resize", () => {
   // Update camera aspect
   camera.aspect = sizes.width / sizes.height;
   camera.updateProjectionMatrix();
+
+  // Update renderer
+  renderer.setSize(sizes.width, sizes.height);
 });
 
 /**
