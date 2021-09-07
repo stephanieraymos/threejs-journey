@@ -38,6 +38,7 @@ window.addEventListener("resize", () => {
 
   // Update renderer (which will update the canvas)
   renderer.setSize(sizes.width, sizes.height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 });
 
 /**
