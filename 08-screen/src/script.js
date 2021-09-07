@@ -42,7 +42,11 @@ window.addEventListener("resize", () => {
 });
 
 window.addEventListener("dblclick", () => {
-  console.log(" Double clicked");
+  if (!document.fullscreenElement) {
+    console.log("Go fullscreen");
+  } else {
+    console.log("Leave fullscreen");
+  }
 });
 
 /**
