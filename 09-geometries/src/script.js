@@ -15,6 +15,18 @@ const scene = new THREE.Scene();
 // const geometry = new THREE.BoxGeometry(1, 1, 1);
 
 const positionsArray = new Float32Array(9);
+//First vertices
+positionArray[0] = 0; //x
+positionArray[1] = 0; //y
+positionArray[2] = 0; //z
+//Second vertices
+positionArray[3] = 0;
+positionArray[4] = 1;
+positionArray[5] = 0;
+//Third vertices
+positionArray[6] = 1;
+positionArray[7] = 0;
+positionArray[8] = 0;
 
 const material = new THREE.MeshBasicMaterial({
   color: 0xff0000,
