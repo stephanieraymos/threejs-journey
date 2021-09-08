@@ -13,7 +13,11 @@ const scene = new THREE.Scene();
 
 // Object
 // const geometry = new THREE.BoxGeometry(1, 1, 1);
+
 const geometry = new THREE.BufferGeometry();
+const count = 50;
+// 3 vertices + 3 values per vertice
+const points = new Float32Array(count * 3 * 3);
 
 const material = new THREE.MeshBasicMaterial({
   color: 0xff0000,
