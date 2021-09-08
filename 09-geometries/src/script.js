@@ -19,11 +19,11 @@ const count = 50;
 // 3 vertices + 3 values per vertice
 const points = new Float32Array(count * 3 * 3);
 
-for(let i = 0; i < count * 3 * 3; i++){
-    points[i] = Math.random()
+for (let i = 0; i < count * 3 * 3; i++) {
+  points[i] = Math.random() - 0.5;
 }
 
-const positionsAttr = new THREE.BufferAttribute(points, 3)
+const positionsAttr = new THREE.BufferAttribute(points, 3);
 
 geometry.setAttribute("position", positionsAttr); // Built in THREE shaders
 
