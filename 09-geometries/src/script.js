@@ -23,6 +23,8 @@ for (let i = 0; i < count * 3 * 3; i++) {
   points[i] = (Math.random() - 0.5) * 4;
 }
 
+// TODO Look into index buffer attributes to improve performance.
+
 const positionsAttr = new THREE.BufferAttribute(points, 3);
 
 geometry.setAttribute("position", positionsAttr); // Built in THREE shaders
