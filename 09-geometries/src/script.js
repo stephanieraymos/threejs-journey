@@ -15,12 +15,12 @@ const scene = new THREE.Scene();
 // const geometry = new THREE.BoxGeometry(1, 1, 1);
 
 const geometry = new THREE.BufferGeometry();
-const count = 50;
+const count = 200;
 // 3 vertices + 3 values per vertice
 const points = new Float32Array(count * 3 * 3);
 
 for (let i = 0; i < count * 3 * 3; i++) {
-  points[i] = (Math.random() - 0.5) * 10;
+  points[i] = (Math.random() - 0.5) * 4;
 }
 
 const positionsAttr = new THREE.BufferAttribute(points, 3);
