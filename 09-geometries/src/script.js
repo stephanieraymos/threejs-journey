@@ -20,7 +20,7 @@ const count = 50;
 const points = new Float32Array(count * 3 * 3);
 
 for(let i = 0; i < count * 3 * 3; i++){
-    points(i) = Math.random()
+    points[i] = Math.random()
 }
 
 const positionsAttr = new THREE.BufferAttribute(points, 3)
