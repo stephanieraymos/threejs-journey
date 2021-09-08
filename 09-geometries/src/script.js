@@ -12,7 +12,10 @@ const canvas = document.querySelector("canvas.webgl");
 const scene = new THREE.Scene();
 
 // Object
-const geometry = new THREE.BoxGeometry(1, 1, 1);
+// const geometry = new THREE.BoxGeometry(1, 1, 1);
+
+const positionsArray = new Float32Array(9);
+
 const material = new THREE.MeshBasicMaterial({
   color: 0xff0000,
   wireframe: true,
