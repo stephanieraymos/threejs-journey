@@ -25,6 +25,8 @@ for(let i = 0; i < count * 3 * 3; i++){
 
 const positionsAttr = new THREE.BufferAttribute(points, 3)
 
+geometry.setAttribute("position", positionsAttr); // Built in THREE shaders
+
 const material = new THREE.MeshBasicMaterial({
   color: 0xff0000,
   wireframe: true,
