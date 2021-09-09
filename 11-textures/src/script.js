@@ -6,18 +6,18 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 // Textures
 const loadingManager = new THREE.LoadingManager();
 const textureLoader = new THREE.TextureLoader(loadingManager);
-loadingManager.onStart = () => {
-  console.log("onStart");
-};
-loadingManager.onProgress = () => {
-  console.log("onProgress");
-};
-loadingManager.onLoaded = () => {
-  console.log("onLoaded");
-};
-loadingManager.onError = () => {
-  console.log("onError");
-};
+// loadingManager.onStart = () => {
+//   console.log("onStart");
+// };
+// loadingManager.onProgress = () => {
+//   console.log("onProgress");
+// };
+// loadingManager.onLoaded = () => {
+//   console.log("onLoaded");
+// };
+// loadingManager.onError = () => {
+//   console.log("onError");
+// };
 
 const colorTexture = textureLoader.load("/textures/door/color.jpg");
 const alphaTexture = textureLoader.load("/textures/door/alpha.jpg");
@@ -38,9 +38,12 @@ const roughnessTexture = textureLoader.load("/textures/door/roughness.jpg");
 // colorTexture.offset.x = 0.5
 // colorTexture.offset.y = 0.5
 
-colorTexture.rotation = Math.PI * 0.25
-colorTexture.center.x = 0.5
-colorTexture.center.y = 0.5
+// colorTexture.rotation = Math.PI * 0.25
+// colorTexture.center.x = 0.5
+// colorTexture.center.y = 0.5
+
+
+
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
 
