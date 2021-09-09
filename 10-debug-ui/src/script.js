@@ -28,7 +28,8 @@ scene.add(mesh);
 // DEBUG --- GUI ONLY WORKS ON OBJECTS
 // Object to tweak, property to tweak, min / max / precision
 gui.add(mesh.position, "y").min(-3).max(3).step(0.01).name("Elevation");
-gui.add(mesh, "visible")
+gui.add(mesh, "visible");
+gui.add(material, "wireframe");
 
 /**
  * Sizes
