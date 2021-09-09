@@ -3,19 +3,9 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 // Textures
-const image = new Image();
-const texture = new THREE.Texture(image);
-image.onload = () => {
-  // Image is ready
-  // Telling texture that image is updated
-  texture.needsUpdate = true;
-};
+const textureLoader = new THREE.TextureLoader();
+const texture = textureLoader.load("/textures/door/color.jpg");
 
-image.src = "/textures/door/color.jpg";
-
-/**
- * Base
- */
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
 
