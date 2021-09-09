@@ -35,7 +35,9 @@ gui.add(mesh.position, "y").min(-3).max(3).step(0.01).name("Elevation");
 gui.add(mesh, "visible");
 // Can also access material of mesh with mesh.material. Irrelevant here since I created a variable for the material.
 gui.add(material, "wireframe");
-gui.addColor(params, "color"); // Tweaking params object
+gui.addColor(params, "color").onChange(() => {
+    "Tweak did change"
+}) // Tweaking params object
 
 /**
  * Sizes
