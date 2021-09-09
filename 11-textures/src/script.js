@@ -5,8 +5,10 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 // Textures
 const image = new Image();
 image.onload = () => {
-  console.log("Image loading");
+  console.log("Image loaded");
 };
+
+image.src = "/textures/door/color.jpg";
 
 /**
  * Base
