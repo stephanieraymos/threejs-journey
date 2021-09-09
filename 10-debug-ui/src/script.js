@@ -4,7 +4,9 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import gsap from "gsap";
 import * as dat from "dat.gui";
 
-console.log(dat)
+// DEBUG 
+const gui = new dat.GUI();
+
 /**
  * Base
  */
