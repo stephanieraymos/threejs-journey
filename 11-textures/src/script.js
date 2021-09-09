@@ -1,21 +1,12 @@
 import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { DefaultLoadingManager } from "three";
 
 // Textures
-const textureLoader = new THREE.TextureLoader();
-const texture = textureLoader.load(
-  "/textures/door/color.jpg",
-  () => {
-    console.log("Load");
-  },
-  () => {
-    console.log("Progress");
-  },
-  () => {
-    console.log("Error");
-  }
-);
+const loadingManager = new THREE.LoadingManager()
+const textureLoader = new THREE.TextureLoader(DefaultLoadingManager);
+const texture = textureLoader.load("/textures/door/color.jpg");
 
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
