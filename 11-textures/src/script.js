@@ -22,6 +22,7 @@ const textureLoader = new THREE.TextureLoader(loadingManager);
 const colorTexture = textureLoader.load("/textures/minecraft.png");
 const alphaTexture = textureLoader.load("/textures/door/alpha.jpg");
 const heightTexture = textureLoader.load("/textures/door/height.jpg");
+// Normals are usually png to get exact pixels. If not, may have strange results.
 const normalTexture = textureLoader.load("/textures/door/normal.jpg");
 const ambientOcclusionTexture = textureLoader.load(
   "/textures/door/ambientOcclusion.jpg"
@@ -42,6 +43,7 @@ const roughnessTexture = textureLoader.load("/textures/door/roughness.jpg");
 // colorTexture.center.y = 0.5
 
 // Performance helper
+// When using minmapping - texture must be power of 2 (512x512 for example)
 colorTexture.generateMipmaps = false;
 // NearestFilter gets better performance (better frame rate)
 // colorTexture.minFilter = THREE.NearestFilter;
