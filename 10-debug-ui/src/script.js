@@ -10,8 +10,8 @@ const gui = new dat.GUI();
 const params = {
   color: 0xff000,
   spin: () => {
-      gsap.to(mesh.rotation, { duration: 1, y: 10})
-  }
+    gsap.to(mesh.rotation, { duration: 1, y: mesh.rotation.y + 10 });
+  },
 };
 
 /**
@@ -41,7 +41,7 @@ gui.add(material, "wireframe");
 gui.addColor(params, "color").onChange(() => {
   material.color.set(params.color);
 }); // Tweaking params object
-gui.add(params, "spin")
+gui.add(params, "spin");
 
 /**
  * Sizes
