@@ -29,7 +29,6 @@ const ambientOcclusionTexture = textureLoader.load(
 const metalnessTexture = textureLoader.load("/textures/door/metalness.jpg");
 const roughnessTexture = textureLoader.load("/textures/door/roughness.jpg");
 
-
 // colorTexture.repeat.x = 2
 // colorTexture.repeat.y = 3
 // colorTexture.wrapS = THREE.MirroredRepeatWrapping
@@ -42,6 +41,9 @@ const roughnessTexture = textureLoader.load("/textures/door/roughness.jpg");
 // colorTexture.center.x = 0.5
 // colorTexture.center.y = 0.5
 
+// Performance helper
+colorTexture.generateMipmaps = false;
+// NearestFilter gets better performance (better frame rate)
 // colorTexture.minFilter = THREE.NearestFilter;
 colorTexture.magFilter = THREE.NearestFilter;
 
