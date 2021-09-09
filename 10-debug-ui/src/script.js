@@ -7,6 +7,10 @@ import * as dat from "dat.gui";
 // DEBUG
 const gui = new dat.GUI();
 
+const params = {
+  color: 0xff000,
+};
+
 /**
  * Base
  */
@@ -29,7 +33,9 @@ scene.add(mesh);
 // Object to tweak, property to tweak, min / max / precision
 gui.add(mesh.position, "y").min(-3).max(3).step(0.01).name("Elevation");
 gui.add(mesh, "visible");
+// Can also access material of mesh with mesh.material. Irrelevant here since I created a variable for the material.
 gui.add(material, "wireframe");
+// gui.addColor()
 
 /**
  * Sizes
