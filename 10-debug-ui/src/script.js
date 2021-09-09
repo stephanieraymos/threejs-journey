@@ -7,14 +7,10 @@ import * as dat from "dat.gui";
 // DEBUG
 const gui = new dat.GUI();
 
-const spin = () => {
-
-}
-
 const params = {
   color: 0xff000,
   spin: () => {
-      console.log("Spin")
+      gsap.to(mesh.rotation, { duration: 1, y: 10})
   }
 };
 
