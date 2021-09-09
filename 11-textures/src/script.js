@@ -1,10 +1,11 @@
 import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { DefaultLoadingManager } from "three";
+// import { DefaultLoadingManager } from "three";
 
 // Textures
 const loadingManager = new THREE.LoadingManager();
+const textureLoader = new THREE.TextureLoader(loadingManager);
 loadingManager.onStart = () => {
   console.log("onStart");
 };
@@ -17,7 +18,7 @@ loadingManager.onLoaded = () => {
 loadingManager.onError = () => {
   console.log("onError");
 };
-const textureLoader = new THREE.TextureLoader(loadingManager);
+
 const colorTexture = textureLoader.load("/textures/door/color.jpg");
 const alphaTexture = textureLoader.load("/textures/door/alpha.jpg");
 const heightTexture = textureLoader.load("/textures/door/height.jpg");
