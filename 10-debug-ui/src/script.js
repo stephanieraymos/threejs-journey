@@ -5,7 +5,7 @@ import gsap from "gsap";
 import * as dat from "dat.gui";
 
 // DEBUG
-const gui = new dat.GUI();
+const gui = new dat.GUI({ closed: true });
 
 const params = {
   color: 0xff000,
