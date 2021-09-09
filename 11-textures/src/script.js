@@ -19,7 +19,7 @@ const textureLoader = new THREE.TextureLoader(loadingManager);
 //   console.log("onError");
 // };
 
-const colorTexture = textureLoader.load("/textures/checkerboard-1024x1024.png");
+const colorTexture = textureLoader.load("/textures/checkerboard-8x8.png");
 const alphaTexture = textureLoader.load("/textures/door/alpha.jpg");
 const heightTexture = textureLoader.load("/textures/door/height.jpg");
 const normalTexture = textureLoader.load("/textures/door/normal.jpg");
