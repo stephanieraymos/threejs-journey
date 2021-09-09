@@ -38,7 +38,7 @@ colorTexture.wrapT = THREE.MirroredRepeatWrapping
 colorTexture.offset.x = 0.5
 colorTexture.offset.y = 0.5
 
-colorTexture.rotation = 1
+colorTexture.rotation = Math.PI * 0.25
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
 
