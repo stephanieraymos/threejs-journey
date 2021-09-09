@@ -32,8 +32,8 @@ const roughnessTexture = textureLoader.load("/textures/door/roughness.jpg");
 
 colorTexture.repeat.x = 2
 colorTexture.repeat.y = 3
-colorTexture.wrapS = THREE.RepeatWrapping
-colorTexture.wrapT = THREE.RepeatWrapping
+colorTexture.wrapS = THREE.MirroredRepeatWrapping
+colorTexture.wrapT = THREE.MirroredRepeatWrapping
 
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
