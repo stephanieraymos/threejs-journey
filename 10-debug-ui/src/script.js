@@ -26,8 +26,10 @@ const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
 
 // DEBUG --- GUI ONLY WORKS ON OBJECTS
-// Object to tweak, property to tweak, min / max / step
+// Object to tweak, property to tweak, min / max / precision
+gui.add(mesh.position, "x", -3, 3, 0.01)
 gui.add(mesh.position, "y", -3, 3, 0.01)
+gui.add(mesh.position, "z", -3, 3, 0.01)
 
 /**
  * Sizes
