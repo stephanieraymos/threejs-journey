@@ -4,10 +4,11 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 // Textures
 const image = new Image();
+const texture = new THREE.Texture(image);
 image.onload = () => {
   // Image is ready
-  const texture = new THREE.Texture(image)
-  console.log(texture);
+  // Telling texture that image is updated
+  texture.needsUpdate = true;
 };
 
 image.src = "/textures/door/color.jpg";
