@@ -36,7 +36,7 @@ gui.add(mesh, "visible");
 // Can also access material of mesh with mesh.material. Irrelevant here since I created a variable for the material.
 gui.add(material, "wireframe");
 gui.addColor(params, "color").onChange(() => {
-    "Tweak did change"
+    console.log("Tweak did change");
 }) // Tweaking params object
 
 /**
