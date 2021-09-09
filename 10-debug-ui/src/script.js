@@ -7,8 +7,15 @@ import * as dat from "dat.gui";
 // DEBUG
 const gui = new dat.GUI();
 
+const spin = () => {
+
+}
+
 const params = {
   color: 0xff000,
+  spin: () => {
+      console.log("Spin")
+  }
 };
 
 /**
@@ -38,6 +45,7 @@ gui.add(material, "wireframe");
 gui.addColor(params, "color").onChange(() => {
   material.color.set(params.color);
 }); // Tweaking params object
+gui.add(params, "spin")
 
 /**
  * Sizes
