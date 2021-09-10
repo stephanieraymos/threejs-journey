@@ -5,12 +5,16 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 const textureLoader = new THREE.TextureLoader();
 const doorTexture = textureLoader.load("/textures/door/color.jpg");
 const alphaTexture = textureLoader.load("/textures/door/alpha.jpg");
-const ambientTexture = textureLoader.load("/textures/door/ambientOcclusion.jpg");
+const ambientTexture = textureLoader.load(
+  "/textures/door/ambientOcclusion.jpg"
+);
 const heightTexture = textureLoader.load("/textures/door/height.jpg");
 const normalTexture = textureLoader.load("/textures/door/normal.jpg");
 const metalnessTexture = textureLoader.load("/textures/door/metalness.jpg");
 const roughnessTexture = textureLoader.load("/textures/door/roughness.jpg");
 
+const matcapTexture = textureLoader.load("/textures/matcaps/1.png");
+const gradientTexture = textureLoader.load("/textures/gradients/3.jpg");
 
 /**
  * Base
@@ -20,7 +24,6 @@ const canvas = document.querySelector("canvas.webgl");
 
 // Scene
 const scene = new THREE.Scene();
-
 
 // objects
 const material = new THREE.MeshBasicMaterial({ map: doorTexture });
