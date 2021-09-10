@@ -4,7 +4,13 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 const textureLoader = new THREE.TextureLoader();
 const doorTexture = textureLoader.load("/textures/door/color.jpg");
-console.log(doorTexture);
+const alphaTexture = textureLoader.load("/textures/door/alpha.jpg");
+const ambientTexture = textureLoader.load("/textures/door/ambientOcclusion.jpg");
+const heightTexture = textureLoader.load("/textures/door/height.jpg");
+const normalTexture = textureLoader.load("/textures/door/normal.jpg");
+const metalnessTexture = textureLoader.load("/textures/door/metalness.jpg");
+const roughnessTexture = textureLoader.load("/textures/door/roughness.jpg");
+
 
 /**
  * Base
