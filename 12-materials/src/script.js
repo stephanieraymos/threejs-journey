@@ -13,14 +13,18 @@ const scene = new THREE.Scene();
 
 // objects
 const material = new THREE.MeshBasicMaterial();
-const sphere = new THREE.Mesh(
-  new THREE.SphereGeometry(0.5, 16, 16),
-  material
-);
+const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), material);
 sphere.position.x = -1.5;
 
 const plane = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), material);
-scene.add(sphere, plane);
+
+const torus = new THREE.Mesh(
+  new THREE.TorusGeometry(0.5, 0.1, 16, 100),
+  material
+);
+torus.position.x = 1.5;
+
+scene.add(sphere, plane, torus);
 /**
  * Sizes
  */
