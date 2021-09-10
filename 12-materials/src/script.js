@@ -26,14 +26,16 @@ const canvas = document.querySelector("canvas.webgl");
 const scene = new THREE.Scene();
 
 // objects
-const material = new THREE.MeshBasicMaterial({ color: "green" });
-material.map = doorTexture;
+// const material = new THREE.MeshBasicMaterial({ color: "yellow" });
+// material.map = doorTexture;
 // material.wireframe = true;
 // When using opacity or alpha map, must set transparency to true
 // material.opacity = 0.5;
-material.transparent = true;
-material.alphaMap = alphaTexture;
-material.side = THREE.DoubleSide;
+// material.transparent = true;
+// material.alphaMap = alphaTexture;
+// material.side = THREE.DoubleSide;
+
+const material = new THREE.MeshNormalMaterial()
 
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), material);
 sphere.position.x = -1.5;
