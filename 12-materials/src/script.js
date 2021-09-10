@@ -17,7 +17,9 @@ const sphere = new THREE.Mesh(
   new THREE.SphereBufferGeometry(0.5, 16, 16),
   material
 );
-scene.add(sphere);
+
+const plane = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), material);
+scene.add(sphere, plane);
 /**
  * Sizes
  */
