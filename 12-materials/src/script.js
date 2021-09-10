@@ -14,7 +14,7 @@ const scene = new THREE.Scene();
 // objects
 const material = new THREE.MeshBasicMaterial();
 const sphere = new THREE.Mesh(
-  new THREE.SphereBufferGeometry(0.5, 16, 16),
+  new THREE.SphereGeometry(0.5, 16, 16),
   material
 );
 
