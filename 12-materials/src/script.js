@@ -35,7 +35,8 @@ const scene = new THREE.Scene();
 // material.alphaMap = alphaTexture;
 // material.side = THREE.DoubleSide;
 
-const material = new THREE.MeshNormalMaterial()
+const material = new THREE.MeshNormalMaterial();
+material.wireframe = true;
 
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), material);
 sphere.position.x = -1.5;
