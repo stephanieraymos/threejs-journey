@@ -26,8 +26,9 @@ const canvas = document.querySelector("canvas.webgl");
 const scene = new THREE.Scene();
 
 // objects
-const material = new THREE.MeshBasicMaterial();
-material.map = doorTexture;
+const material = new THREE.MeshBasicMaterial({ color: "red" });
+// material.map = doorTexture;
+material.color.set("yellow")
 
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), material);
 sphere.position.x = -1.5;
