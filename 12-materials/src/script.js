@@ -29,9 +29,10 @@ const scene = new THREE.Scene();
 const material = new THREE.MeshBasicMaterial({ color: "green" });
 // material.map = doorTexture;
 // material.wireframe = true;
-material.opacity = 0.5;
 // When using opacity, must set transparency to true
+// material.opacity = 0.5;
 material.transparent = true;
+material.alphaMap = alphaTexture;
 
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), material);
 sphere.position.x = -1.5;
