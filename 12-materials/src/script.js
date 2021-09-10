@@ -27,7 +27,8 @@ const scene = new THREE.Scene();
 
 // objects
 const material = new THREE.MeshBasicMaterial({ color: "green" });
-material.map = doorTexture;
+// material.map = doorTexture;
+material.wireframe = true;
 
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), material);
 sphere.position.x = -1.5;
