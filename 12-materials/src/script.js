@@ -40,8 +40,10 @@ const scene = new THREE.Scene();
 
 // Can simulate light without having light in the scene.
 // Unlike normal where light depends on where the faces are in relation to the camera
-const material = new THREE.MeshMatcapMaterial();
-material.matcap = matcapTexture;
+// const material = new THREE.MeshMatcapMaterial();
+// material.matcap = matcapTexture;
+
+const material = new THREE.MeshDepthMaterial();
 
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), material);
 sphere.position.x = -1.5;
