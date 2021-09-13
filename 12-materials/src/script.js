@@ -65,26 +65,29 @@ material.roughness = 0.65;
 material.map = doorTexture;
 material.aoMap = ambientTexture;
 material.aoMapIntensity = 1.5;
+material.displacementMap = heightTexture;
+
+// material.wireframe = true;
 
 gui.add(material, "metalness").min(0).max(1).step(0.0001);
 gui.add(material, "roughness").min(0).max(1).step(0.0001);
 gui.add(material, "aoMapIntensity", 0, 10).step(0.01);
 
-const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), material);
+const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 64, 64), material);
 sphere.position.x = -1.5;
 sphere.geometry.setAttribute(
   "uv2",
   new THREE.BufferAttribute(sphere.geometry.attributes.uv.array, 2)
 );
 
-const plane = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), material);
+const plane = new THREE.Mesh(new THREE.PlaneGeometry(1, 1, 100, 100), material);
 plane.geometry.setAttribute(
   "uv2",
   new THREE.BufferAttribute(plane.geometry.attributes.uv.array, 2)
 );
 
 const torus = new THREE.Mesh(
-  new THREE.TorusGeometry(0.5, 0.2, 16, 32),
+  new THREE.TorusGeometry(0.5, 0.2, 64, 128),
   material
 );
 torus.position.x = 1.5;
