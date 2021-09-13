@@ -1,6 +1,10 @@
 import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import * as dat from 'dat.gui'
+
+//DEBUG Panel  
+const gui = new dat.GUI();
 
 const textureLoader = new THREE.TextureLoader();
 const doorTexture = textureLoader.load("/textures/door/color.jpg");
@@ -58,6 +62,7 @@ const scene = new THREE.Scene();
 const material = new THREE.MeshStandardMaterial();
 material.metalness = 0.45;
 material.roughness = 0.65;
+
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), material);
 sphere.position.x = -1.5;
 
