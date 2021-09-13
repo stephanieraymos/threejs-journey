@@ -1,9 +1,9 @@
 import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import * as dat from 'dat.gui'
+import * as dat from "dat.gui";
 
-//DEBUG Panel  
+//DEBUG Panel
 const gui = new dat.GUI();
 
 const textureLoader = new THREE.TextureLoader();
@@ -62,6 +62,7 @@ const scene = new THREE.Scene();
 const material = new THREE.MeshStandardMaterial();
 material.metalness = 0.45;
 material.roughness = 0.65;
+material.map = doorTexture;
 
 gui.add(material, "metalness").min(0).max(1).step(0.0001);
 gui.add(material, "roughness").min(0).max(1).step(0.0001);
@@ -70,6 +71,7 @@ const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), material);
 sphere.position.x = -1.5;
 
 const plane = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), material);
+console.log(plane.geometry);
 
 const torus = new THREE.Mesh(
   new THREE.TorusGeometry(0.5, 0.2, 16, 32),
