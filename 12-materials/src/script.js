@@ -15,9 +15,9 @@ const roughnessTexture = textureLoader.load("/textures/door/roughness.jpg");
 
 const matcapTexture = textureLoader.load("/textures/matcaps/3.png");
 const gradientTexture = textureLoader.load("/textures/gradients/3.jpg");
-gradientTexture.minFilter = THREE.NearestFilter
-gradientTexture.magFilter = THREE.NearestFilter
-gradientTexture.generateMipmaps = false
+gradientTexture.minFilter = THREE.NearestFilter;
+gradientTexture.magFilter = THREE.NearestFilter;
+gradientTexture.generateMipmaps = false;
 
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
@@ -54,8 +54,10 @@ const scene = new THREE.Scene();
 // const material = new THREE.MeshToonMaterial()
 // material.gradientMap = gradientTexture;
 
-const material = new THREE.MeshStandardMaterial()
-
+// Supports light like phong and lambert but with more realistic algorithm and better params like roughness and metalness
+const material = new THREE.MeshStandardMaterial();
+material.metalness = 0.45;
+material.roughness = 0.65;
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), material);
 sphere.position.x = -1.5;
 
