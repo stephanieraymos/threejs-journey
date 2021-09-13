@@ -18,8 +18,7 @@ const gradientTexture = textureLoader.load("/textures/gradients/3.jpg");
 gradientTexture.minFilter = THREE.NearestFilter
 gradientTexture.magFilter = THREE.NearestFilter
 gradientTexture.generateMipmaps = false
- * Base
- */
+
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
 
@@ -52,8 +51,10 @@ const scene = new THREE.Scene();
 // material.shininess = 100
 // material.specular = new THREE.Color("grey");
 
-const material = new THREE.MeshToonMaterial()
-material.gradientMap = gradientTexture;
+// const material = new THREE.MeshToonMaterial()
+// material.gradientMap = gradientTexture;
+
+const material = new THREE.MeshStandardMaterial()
 
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), material);
 sphere.position.x = -1.5;
