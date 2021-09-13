@@ -46,8 +46,8 @@ const scene = new THREE.Scene();
 // White when close, black when far
 // const material = new THREE.MeshDepthMaterial();
 
-const material = new THREE.MeshLambertMaterial();
-
+// const material = new THREE.MeshLambertMaterial();
+const material = new THREE.MeshPhongMaterial();
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), material);
 sphere.position.x = -1.5;
 
