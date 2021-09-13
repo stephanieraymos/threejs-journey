@@ -15,7 +15,8 @@ const roughnessTexture = textureLoader.load("/textures/door/roughness.jpg");
 
 const matcapTexture = textureLoader.load("/textures/matcaps/3.png");
 const gradientTexture = textureLoader.load("/textures/gradients/3.jpg");
-
+gradientTexture.minFilter = THREE.NearestFilter
+gradientTexture.magFilter = THREE.NearestFilter
 /**
  * Base
  */
