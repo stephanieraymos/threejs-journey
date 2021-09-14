@@ -69,6 +69,9 @@ material.displacementMap = heightTexture;
 material.displacementScale = 0.05;
 material.metalnessMap = metalnessTexture;
 material.roughnessMap = roughnessTexture;
+material.normalMap = normalTexture;
+
+
 
 // material.wireframe = true;
 
