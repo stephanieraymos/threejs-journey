@@ -66,6 +66,7 @@ material.map = doorTexture;
 material.aoMap = ambientTexture;
 material.aoMapIntensity = 1.5;
 material.displacementMap = heightTexture;
+material.displacementScale = 0.05;
 
 // material.wireframe = true;
 
