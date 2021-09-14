@@ -69,9 +69,10 @@ material.displacementMap = heightTexture;
 material.displacementScale = 0.05;
 material.metalnessMap = metalnessTexture;
 material.roughnessMap = roughnessTexture;
-material.normalMap = normalTexture;
-
-
+material.normalMap = normalTexture; // Better than lots of vertices for height
+material.normalScale.set(0.5, 0.5);
+material.alphaMap = alphaTexture;
+material.transparent = true
 
 // material.wireframe = true;
 
