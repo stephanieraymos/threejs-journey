@@ -7,6 +7,8 @@ import * as dat from "dat.gui";
 const gui = new dat.GUI();
 
 const textureLoader = new THREE.TextureLoader();
+const cubeTextureLoader = new THREE.CubeTextureLoader();
+
 const doorTexture = textureLoader.load("/textures/door/color.jpg");
 const alphaTexture = textureLoader.load("/textures/door/alpha.jpg");
 const ambientTexture = textureLoader.load(
@@ -22,6 +24,16 @@ const gradientTexture = textureLoader.load("/textures/gradients/3.jpg");
 gradientTexture.minFilter = THREE.NearestFilter;
 gradientTexture.magFilter = THREE.NearestFilter;
 gradientTexture.generateMipmaps = false;
+
+// Order very important 
+const envMapTexture = cubeTextureLoader.load([
+  "/textures/environmentMaps/0/px.jpg",
+  "/textures/environmentMaps/0/nx.jpg",
+  "/textures/environmentMaps/0/py.jpg",
+  "/textures/environmentMaps/0/ny.jpg",
+  "/textures/environmentMaps/0/pz.jpg",
+  "/textures/environmentMaps/0/nz.jpg",
+]);
 
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
@@ -59,22 +71,25 @@ const scene = new THREE.Scene();
 // material.gradientMap = gradientTexture;
 
 // Supports light like phong and lambert but with more realistic algorithm and better params like roughness and metalness
-const material = new THREE.MeshStandardMaterial();
-// material.metalness = 0.45;
-// material.roughness = 0.65;
-material.map = doorTexture;
-material.aoMap = ambientTexture;
-material.aoMapIntensity = 1.5;
-material.displacementMap = heightTexture;
-material.displacementScale = 0.05;
-material.metalnessMap = metalnessTexture;
-material.roughnessMap = roughnessTexture;
-material.normalMap = normalTexture; // Better than lots of vertices for height
-material.normalScale.set(0.5, 0.5);
-material.alphaMap = alphaTexture;
-material.transparent = true
-
+// const material = new THREE.MeshStandardMaterial();
+// material.metalness = 0;
+// material.roughness = 1;
+// material.map = doorTexture;
+// material.aoMap = ambientTexture;
+// material.aoMapIntensity = 1.5;
+// material.displacementMap = heightTexture;
+// material.displacementScale = 0.05;
+// material.metalnessMap = metalnessTexture;
+// material.roughnessMap = roughnessTexture;
+// material.normalMap = normalTexture; // Better than lots of vertices for height
+// material.normalScale.set(0.5, 0.5);
+// material.alphaMap = alphaTexture;
+// material.transparent = true
 // material.wireframe = true;
+
+const material = new THREE.MeshStandardMaterial();
+material.metalness = 0.7;
+material.roughness = 0.2;
 
 gui.add(material, "metalness").min(0).max(1).step(0.0001);
 gui.add(material, "roughness").min(0).max(1).step(0.0001);
