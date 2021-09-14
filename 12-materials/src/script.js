@@ -60,13 +60,15 @@ const scene = new THREE.Scene();
 
 // Supports light like phong and lambert but with more realistic algorithm and better params like roughness and metalness
 const material = new THREE.MeshStandardMaterial();
-material.metalness = 0.45;
-material.roughness = 0.65;
+// material.metalness = 0.45;
+// material.roughness = 0.65;
 material.map = doorTexture;
 material.aoMap = ambientTexture;
 material.aoMapIntensity = 1.5;
 material.displacementMap = heightTexture;
 material.displacementScale = 0.05;
+material.metalnessMap = metalnessTexture;
+material.roughnessMap = roughnessTexture;
 
 // material.wireframe = true;
 
