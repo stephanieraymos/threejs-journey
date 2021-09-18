@@ -15,10 +15,6 @@ const canvas = document.querySelector("canvas.webgl");
 // Scene
 const scene = new THREE.Scene();
 
-// Axes helper
-const axesHelper = new THREE.AxesHelper();
-scene.add(axesHelper);
-
 /**
  * Textures
  */
@@ -48,6 +44,13 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
   });
   const text = new THREE.Mesh(textGeo, textMaterial);
   scene.add(text);
+
+  for (let i = 0; i < 100; i++) {
+    const donutGeo = new THREE.TorusGeometry(0.3, 0.2, 20, 45);
+    const donutMat = new THREE.MeshMatcapMaterial({ matcap: matcapTexture });
+    const donut = new THREE.Mesh(donutGeo, donutMat);
+    scene.add(donut);
+  }
 });
 
 /**
