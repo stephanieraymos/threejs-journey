@@ -41,8 +41,8 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
   });
   textGeo.computeBoundingBox();
   textGeo.translate(
-    -textGeo.boundingBox.max.x * 0.5,
-    -textGeo.boundingBox.max.y * 0.5,
+    -(textGeo.boundingBox.max.x - 0.02) * 0.5,
+    -(textGeo.boundingBox.max.y - 0.02) * 0.5,
     -textGeo.boundingBox.max.z * 0.5
   );
 
