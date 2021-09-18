@@ -39,18 +39,17 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
 
   textGeo.center();
 
-  const textMaterial = new THREE.MeshMatcapMaterial({
+  const material = new THREE.MeshMatcapMaterial({
     matcap: matcapTexture,
   });
-  const text = new THREE.Mesh(textGeo, textMaterial);
+  const text = new THREE.Mesh(textGeo, material);
   scene.add(text);
 
-  console.time("donuts")
   const donutGeo = new THREE.TorusGeometry(0.3, 0.2, 20, 45);
-  const donutMat = new THREE.MeshMatcapMaterial({ matcap: matcapTexture });
+
   for (let i = 0; i < 100; i++) {
 
-    const donut = new THREE.Mesh(donutGeo, donutMat);
+    const donut = new THREE.Mesh(donutGeo, material);
     donut.position.x = (Math.random() -0.5) * 10;
     donut.position.y = (Math.random() -0.5) * 10;
     donut.position.z = (Math.random() -0.5) * 10;
@@ -63,7 +62,6 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
 
     scene.add(donut);
   }
-  console.timeEnd("donuts");
 });
 
 /**
