@@ -19,7 +19,7 @@ const scene = new THREE.Scene();
  * Textures
  */
 const textureLoader = new THREE.TextureLoader();
-const matcapTexture = textureLoader.load("/textures/matcaps/1.png");
+const matcapTexture = textureLoader.load("/textures/matcaps/8.png");
 
 // FONTS
 const fontLoader = new THREE.FontLoader();
@@ -47,7 +47,7 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
 
   const donutGeo = new THREE.TorusGeometry(0.3, 0.2, 20, 45);
 
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 400; i++) {
 
     const donut = new THREE.Mesh(donutGeo, material);
     donut.position.x = (Math.random() -0.5) * 10;
