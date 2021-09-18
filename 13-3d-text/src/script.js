@@ -40,7 +40,12 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
     bevelSegments: 4,
   });
   textGeo.computeBoundingBox();
-  console.log(textGeo.boundingBox);
+  textGeo.translate(
+    -textGeo.boundingBox.max.x * 0.5,
+    -textGeo.boundingBox.max.y * 0.5,
+    -textGeo.boundingBox.max.z * 0.5
+  );
+
   const textMaterial = new THREE.MeshBasicMaterial({ wireframe: true });
   const text = new THREE.Mesh(textGeo, textMaterial);
   scene.add(text);
