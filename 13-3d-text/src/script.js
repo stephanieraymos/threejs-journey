@@ -54,6 +54,14 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
     donut.position.y = (Math.random() -0.5) * 10;
     donut.position.z = (Math.random() -0.5) * 10;
 
+    donut.rotation.x = Math.random() * Math.PI;
+    donut.rotation.y = Math.random() * Math.PI;
+
+    const scale = Math.random() 
+    donut.scale.x = scale
+    donut.scale.y = scale
+    donut.scale.z = scale
+
     scene.add(donut);
   }
 });
