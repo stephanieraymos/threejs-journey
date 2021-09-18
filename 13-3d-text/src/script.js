@@ -25,7 +25,7 @@ const matcapTexture = textureLoader.load("/textures/matcaps/8.png");
 const fontLoader = new THREE.FontLoader();
 
 fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
-  const textGeo = new THREE.TextGeometry("Stephanie Raymos", {
+  const textGeo = new THREE.TextGeometry("Oliver", {
     font: font,
     size: 0.5,
     height: 0.2,
