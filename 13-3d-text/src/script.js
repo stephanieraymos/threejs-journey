@@ -58,9 +58,7 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
     donut.rotation.y = Math.random() * Math.PI;
 
     const scale = Math.random() 
-    donut.scale.x = scale
-    donut.scale.y = scale
-    donut.scale.z = scale
+    donut.scale.set(scale, scale, scale)
 
     scene.add(donut);
   }
