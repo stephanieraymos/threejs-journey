@@ -23,6 +23,7 @@ scene.add(axesHelper);
  * Textures
  */
 const textureLoader = new THREE.TextureLoader();
+const matcapTexture = textureLoader.load("/textures/matcaps/1.png");
 
 // FONTS
 const fontLoader = new THREE.FontLoader();
@@ -42,7 +43,9 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
 
   textGeo.center();
 
-  const textMaterial = new THREE.MeshBasicMaterial({ wireframe: true });
+  const textMaterial = new THREE.MeshMatcapMaterial({
+    matcap: matcapTexture,
+  });
   const text = new THREE.Mesh(textGeo, textMaterial);
   scene.add(text);
 });
