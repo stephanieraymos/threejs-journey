@@ -39,15 +39,8 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
     bevelOffset: 0,
     bevelSegments: 4,
   });
-  textGeo.computeBoundingBox();
-  textGeo.translate(
-    -(textGeo.boundingBox.max.x - 0.02) * 0.5,
-    -(textGeo.boundingBox.max.y - 0.02) * 0.5,
-    -(textGeo.boundingBox.max.z - 0.03) * 0.5
-  );
 
-  textGeo.computeBoundingBox();
-  console.log(textGeo.boundingBox);
+  textGeo.center();
 
   const textMaterial = new THREE.MeshBasicMaterial({ wireframe: true });
   const text = new THREE.Mesh(textGeo, textMaterial);
