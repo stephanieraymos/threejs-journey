@@ -24,7 +24,7 @@ const textureLoader = new THREE.TextureLoader();
 const fontLoader = new THREE.FontLoader();
 
 fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
-  const textGeo = new THREE.TextBufferGeometry("Stephanie Raymos", {
+  const textGeo = new THREE.TextGeometry("Stephanie Raymos", {
     font: font,
     size: 0.5,
     height: 0.2,
@@ -37,7 +37,8 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
   });
   const textMaterial = new THREE.MeshBasicMaterial();
   const text = new THREE.Mesh(textGeo, textMaterial);
-  scene.add(text)
+  scene.add(text);
+});
 
 /**
  * Object
