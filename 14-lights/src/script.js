@@ -20,7 +20,12 @@ const scene = new THREE.Scene();
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // color, intensity
 scene.add(ambientLight);
 
+// Directional light to simulate light bouncing
+const directionalLight = new THREE.DirectionalLight(0x00ffff, 0.5);
+scene.add(directionalLight);
+
 gui.add(ambientLight, "intensity", 0, 1, 0.01); // min, max, step
+
 /**
  * Objects
  */
