@@ -54,7 +54,9 @@ const spotLight = new THREE.SpotLight(
   1
 ); // Color, intensity, distance (compare to flashlight strength; how far it can reach), angle (how wide the light is), penumbra (dim on edges of light), decay
 spotLight.position.set(0, 2, 3);
-scene.add(spotLight)
+scene.add(spotLight);
+console.log(spotlight.target);
+// Spotlight target is Object3D not vector 3
 
 gui.addColor(params, "color").onChange(() => {
   ambientLight.color.set(params.color);
