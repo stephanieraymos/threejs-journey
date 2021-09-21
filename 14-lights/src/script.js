@@ -38,7 +38,7 @@ const pointLight = new THREE.PointLight(0xff9000, 0.5, 10, 2); // color, intensi
 pointLight.position.set(1, 0.5, 1);
 // scene.add(pointLight);
 
-const rectAreaLight = new THREE.RectAreaLight(0x4e00ff, 2, 1, 1); // color, intensity, distance, decay
+const rectAreaLight = new THREE.RectAreaLight(0x4e00ff, 2, 3, 1); // color, intensity, width, height
 scene.add(rectAreaLight);
 
 gui.addColor(params, "color").onChange(() => {
