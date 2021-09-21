@@ -55,7 +55,8 @@ const spotLight = new THREE.SpotLight(
 ); // Color, intensity, distance (compare to flashlight strength; how far it can reach), angle (how wide the light is), penumbra (dim on edges of light), decay
 spotLight.position.set(0, 2, 3);
 scene.add(spotLight);
-console.log(spotlight.target);
+
+console.log(spotLight.target);
 // Spotlight target is Object3D not vector 3
 
 spotLight.target.position.x = - 1.75
