@@ -19,12 +19,27 @@ const scene = new THREE.Scene();
 // Mesh standard material needs light or you can't see it
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // color, intensity
 scene.add(ambientLight);
+class ColorGUIHelper {
+    constructor(object, prop) {
+      this.object = object;
+      this.prop = prop;
+    }
+    get value() {
+      return `#${this.object[this.prop].getHexString()}`;
+    }
+    set value(hexString) {
+      this.object[this.prop].set(hexString);
+    }
+  }
+
 
 // Directional light to simulate light bouncing
 const directionalLight = new THREE.DirectionalLight(0x00ffff, 0.5);
 scene.add(directionalLight);
 
 gui.add(ambientLight, "intensity", 0, 1, 0.01); // min, max, step
+// gui.add(ambientLight, "color")
+gui.addColor(new ColorGUIHelper(light, 'color'), 'value').name('color');
 
 /**
  * Objects
