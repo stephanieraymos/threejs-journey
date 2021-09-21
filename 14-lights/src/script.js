@@ -19,18 +19,12 @@ const scene = new THREE.Scene();
 // Mesh standard material needs light or you can't see it
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // color, intensity
 scene.add(ambientLight);
-class ColorGUIHelper {
-    constructor(object, prop) {
-      this.object = object;
-      this.prop = prop;
-    }
-    get value() {
-      return `#${this.object[this.prop].getHexString()}`;
-    }
-    set value(hexString) {
-      this.object[this.prop].set(hexString);
-    }
-  }
+const params = {
+    color: 0xff000,
+    spin: () => {
+      gsap.to(mesh.rotation, { duration: 1, y: mesh.rotation.y + 10 });
+    },
+  };
 
 
 // Directional light to simulate light bouncing
@@ -39,7 +33,9 @@ scene.add(directionalLight);
 
 gui.add(ambientLight, "intensity", 0, 1, 0.01); // min, max, step
 // gui.add(ambientLight, "color")
-gui.addColor(new ColorGUIHelper(light, 'color'), 'value').name('color');
+gui.addColor(params, "color").onChange(() => {
+    ambientLight.color.set(params.color);
+  }); // Tweaking params object
 
 /**
  * Objects
