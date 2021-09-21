@@ -18,7 +18,7 @@ const scene = new THREE.Scene();
 // Lights
 // Mesh standard material needs light or you can't see it
 const params = {
-    color: 0xff000,
+    color: 0xffffff,
     spin: () => {
       gsap.to(mesh.rotation, { duration: 1, y: mesh.rotation.y + 10 });
     },
