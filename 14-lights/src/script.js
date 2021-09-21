@@ -18,27 +18,27 @@ const scene = new THREE.Scene();
 // Lights
 // Mesh standard material needs light or you can't see it
 const params = {
-    color: 0xffffff,
-    spin: () => {
-      gsap.to(mesh.rotation, { duration: 1, y: mesh.rotation.y + 10 });
-    },
-  };
+  color: 0xffffff,
+  spin: () => {
+    gsap.to(mesh.rotation, { duration: 1, y: mesh.rotation.y + 10 });
+  },
+};
 const ambientLight = new THREE.AmbientLight(params.color, 0.5); // color, intensity
 scene.add(ambientLight);
-
-
 
 // Directional light to simulate light bouncing
 const directionalLight = new THREE.DirectionalLight(0x00ffff, 0.5);
 directionalLight.position.set(1, 0.25, 0);
 scene.add(directionalLight);
 
+const hemisphere = new THREE.HemisphereLight(0xff0000, 0x0000ff, 0.3);
+scene.add(hemisphere);
 gui.add(ambientLight, "intensity", 0, 1, 0.01); // min, max, step
 // gui.add(ambientLight, "color")
 gui.addColor(params, "color").onChange(() => {
-    ambientLight.color.set(params.color);
-  }); // Tweaking params object
-
+  ambientLight.color.set(params.color);
+}); // Tweaking params object
+// gui.add(directionalLight, "position", -10, 10, 0.1);
 /**
  * Objects
  */
