@@ -58,6 +58,11 @@ scene.add(spotLight);
 console.log(spotlight.target);
 // Spotlight target is Object3D not vector 3
 
+spotLight.target.position.x = - 1.75
+scene.add(spotLight.target);
+
+
+
 gui.addColor(params, "color").onChange(() => {
   ambientLight.color.set(params.color);
 }); // Tweaking params object
