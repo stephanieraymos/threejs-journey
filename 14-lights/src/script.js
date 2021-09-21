@@ -17,14 +17,15 @@ const scene = new THREE.Scene();
 
 // Lights
 // Mesh standard material needs light or you can't see it
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // color, intensity
-scene.add(ambientLight);
 const params = {
     color: 0xff000,
     spin: () => {
       gsap.to(mesh.rotation, { duration: 1, y: mesh.rotation.y + 10 });
     },
   };
+const ambientLight = new THREE.AmbientLight(params.color, 0.5); // color, intensity
+scene.add(ambientLight);
+
 
 
 // Directional light to simulate light bouncing
