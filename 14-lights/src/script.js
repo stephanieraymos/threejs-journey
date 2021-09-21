@@ -30,6 +30,7 @@ scene.add(ambientLight);
 
 // Directional light to simulate light bouncing
 const directionalLight = new THREE.DirectionalLight(0x00ffff, 0.5);
+directionalLight.position.set(1, 0.25, 0);
 scene.add(directionalLight);
 
 gui.add(ambientLight, "intensity", 0, 1, 0.01); // min, max, step
