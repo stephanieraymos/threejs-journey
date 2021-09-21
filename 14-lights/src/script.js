@@ -24,15 +24,18 @@ const params = {
   },
 };
 const ambientLight = new THREE.AmbientLight(params.color, 0.5); // color, intensity
-// scene.add(ambientLight);
+scene.add(ambientLight);
 
 // Directional light to simulate light bouncing
 const directionalLight = new THREE.DirectionalLight(0x00ffff, 0.5);
 directionalLight.position.set(1, 0.25, 0);
-// scene.add(directionalLight);
+scene.add(directionalLight);
 
-const hemisphere = new THREE.HemisphereLight(0xff0000, 0x0000ff, 1);
+const hemisphere = new THREE.HemisphereLight(0xff0000, 0x0000ff, 1); // top, bottom, intensity
 scene.add(hemisphere);
+
+const pointLight = new THREE.PointLight(0xff9000, 0.5);
+scene.add(pointLight);
 
 gui.addColor(params, "color").onChange(() => {
   ambientLight.color.set(params.color);
