@@ -34,9 +34,12 @@ scene.add(directionalLight);
 const hemisphere = new THREE.HemisphereLight(0xff0000, 0x0000ff, 1); // top, bottom, intensity
 scene.add(hemisphere);
 
-const pointLight = new THREE.PointLight(0xff9000, 0.5, 10, 2 ); // color, intensity, distance, decay
+const pointLight = new THREE.PointLight(0xff9000, 0.5, 10, 2); // color, intensity, distance, decay
 pointLight.position.set(1, 0.5, 1);
 scene.add(pointLight);
+
+const rectAreaLight = new THREE.RectAreaLight(0x4e00ff, 2, 1, 1); // color, intensity, distance, decay
+scene.add(rectAreaLight);
 
 gui.addColor(params, "color").onChange(() => {
   ambientLight.color.set(params.color);
