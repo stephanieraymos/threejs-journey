@@ -44,6 +44,18 @@ rectAreaLight.position.set(-1.5, 0, 1.5);
 rectAreaLight.lookAt(new THREE.Vector3()); // When empty it's 000; looking at center of scene.
 scene.add(rectAreaLight);
 
+// Like a flashlight
+const spotLight = new THREE.SpotLight(
+  0x78ff00,
+  0.5,
+  10,
+  Math.PI * 0.1,
+  0.25,
+  1
+); // Color, intensity, distance (compare to flashlight strength; how far it can reach), angle (how wide the light is), penumbra (dim on edges of light), decay
+spotLight.position.set(0, 2, 3);
+scene.add(spotLight)
+
 gui.addColor(params, "color").onChange(() => {
   ambientLight.color.set(params.color);
 }); // Tweaking params object
