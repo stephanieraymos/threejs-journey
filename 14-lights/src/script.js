@@ -24,21 +24,24 @@ const params = {
   },
 };
 const ambientLight = new THREE.AmbientLight(params.color, 0.5); // color, intensity
-// scene.add(ambientLight);
+scene.add(ambientLight);
 
 // Directional light to simulate light bouncing
 const directionalLight = new THREE.DirectionalLight(0x00ffff, 0.5);
 directionalLight.position.set(1, 0.25, 0);
-// scene.add(directionalLight);
+scene.add(directionalLight);
 
 const hemisphere = new THREE.HemisphereLight(0xff0000, 0x0000ff, 1); // top, bottom, intensity
-// scene.add(hemisphere);
+scene.add(hemisphere);
 
 const pointLight = new THREE.PointLight(0xff9000, 0.5, 10, 2); // color, intensity, distance, decay
 pointLight.position.set(1, 0.5, 1);
-// scene.add(pointLight);
+scene.add(pointLight);
 
-const rectAreaLight = new THREE.RectAreaLight(0x4e00ff, 2, 3, 1); // color, intensity, width, height
+// RectAreaLight only works with MeshStandardMaterial and MeshPhysicalMaterial
+const rectAreaLight = new THREE.RectAreaLight(0x4e00ff, 2, 1, 1); // color, intensity, width, height
+rectAreaLight.position.set(-1.5, 0, 1.5);
+rectAreaLight.lookAt(new THREE.Vector3()); // When empty it's 000; looking at center of scene.
 scene.add(rectAreaLight);
 
 gui.addColor(params, "color").onChange(() => {
