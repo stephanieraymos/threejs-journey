@@ -35,6 +35,7 @@ const hemisphere = new THREE.HemisphereLight(0xff0000, 0x0000ff, 1); // top, bot
 scene.add(hemisphere);
 
 const pointLight = new THREE.PointLight(0xff9000, 0.5);
+pointLight.position.set(1, 0.5, 1);
 scene.add(pointLight);
 
 gui.addColor(params, "color").onChange(() => {
