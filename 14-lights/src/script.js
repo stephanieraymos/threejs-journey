@@ -38,8 +38,8 @@ const directionalLight = new THREE.DirectionalLight(0x00ffff, 0.5);
 directionalLight.position.set(1, 0.25, 0);
 scene.add(directionalLight);
 
-const hemisphere = new THREE.HemisphereLight(0xff0000, 0x0000ff, 1); // top, bottom, intensity
-scene.add(hemisphere);
+const hemisphereLight = new THREE.HemisphereLight(0xff0000, 0x0000ff, 1); // top, bottom, intensity
+scene.add(hemisphereLight);
 
 const pointLight = new THREE.PointLight(0xff9000, 0.5, 10, 2); // color, intensity, distance, decay
 pointLight.position.set(1, 0.5, 1);
@@ -76,6 +76,13 @@ gui.addColor(params, "color").onChange(() => {
 // Material
 const material = new THREE.MeshStandardMaterial();
 material.roughness = 0.4;
+
+// Helpers
+const hemisphereLightHelper = new THREE.HemisphereLightHelper(
+  hemisphereLight,
+  0.2
+);
+scene.add(hemisphereLightHelper);
 
 // Objects
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 32, 32), material);
