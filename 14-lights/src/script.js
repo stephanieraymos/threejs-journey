@@ -3,9 +3,14 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import * as dat from "dat.gui";
 
-/**
- * Base
- */
+// -----------------------------------------
+// -----------------------------------------
+// --------- MINIMAL COST LIGHTS -----------
+// -----------------------------------------
+// -----------------------------------------
+// AmbientLight and HemisphereLight are the lights
+// that are best for performance.
+
 // Debug
 const gui = new dat.GUI();
 
@@ -59,10 +64,8 @@ scene.add(spotLight);
 console.log(spotLight.target);
 // Spotlight target is Object3D not vector 3
 
-spotLight.target.position.x = - 1.75
+spotLight.target.position.x = -0.75;
 scene.add(spotLight.target);
-
-
 
 gui.addColor(params, "color").onChange(() => {
   ambientLight.color.set(params.color);
@@ -90,9 +93,7 @@ plane.position.y = -0.65;
 
 scene.add(sphere, cube, torus, plane);
 
-/**
- * Sizes
- */
+// Sizes
 const sizes = {
   width: window.innerWidth,
   height: window.innerHeight,
@@ -112,9 +113,6 @@ window.addEventListener("resize", () => {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 });
 
-/**
- * Camera
- */
 // Base camera
 const camera = new THREE.PerspectiveCamera(
   75,
@@ -131,18 +129,14 @@ scene.add(camera);
 const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
 
-/**
- * Renderer
- */
+// Renderer
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-/**
- * Animate
- */
+// Animation
 const clock = new THREE.Clock();
 
 const tick = () => {
