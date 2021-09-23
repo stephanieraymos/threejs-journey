@@ -10,6 +10,8 @@ import * as dat from "dat.gui";
 // -----------------------------------------
 // AmbientLight and HemisphereLight are the lights
 // that are best for performance.
+// DirectionalLight and PointLight are lights with moderate cost
+// SpotLight and RectAreaLight are expensive lights
 
 // Debug
 const gui = new dat.GUI();
