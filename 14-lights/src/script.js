@@ -2,7 +2,7 @@ import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import * as dat from "dat.gui";
-
+import { RectAreaLightHelper } from "three/examples/jsm/helpers/RectAreaLightHelper.js";
 // -----------------------------------------
 // -----------------------------------------
 // --------- MINIMAL COST LIGHTS -----------
@@ -91,7 +91,7 @@ const directionalLightHelper = new THREE.DirectionalLightHelper(
 
 const pointLightHelper = new THREE.PointLightHelper(pointLight, 0.2);
 
-// const rectAreaLightHelper = new THREE.RectAreaLightHelper(rectAreaLight, 0.2);
+const rectAreaLightHelper = new RectAreaLightHelper(rectAreaLight);
 
 const spotLightHelper = new THREE.SpotLightHelper(spotLight);
 window.requestAnimationFrame(() => {
@@ -101,7 +101,7 @@ window.requestAnimationFrame(() => {
 scene.add(hemisphereLightHelper);
 scene.add(directionalLightHelper);
 scene.add(pointLightHelper);
-// scene.add(rectAreaLightHelper);
+scene.add(rectAreaLightHelper);
 scene.add(spotLightHelper);
 
 // Objects
