@@ -81,7 +81,9 @@ material.roughness = 0.4;
 const hemisphereLightHelper = new THREE.HemisphereLightHelper(
   hemisphereLight,
   0.2
-);
+); // Light, size of helper
+// Colors of helper will correspond to the color of the light (top is blue and bottom is red in this case since those are the colors set on the hemisphere light)
+
 scene.add(hemisphereLightHelper);
 
 // Objects
