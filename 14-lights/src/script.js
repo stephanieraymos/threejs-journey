@@ -41,7 +41,7 @@ scene.add(directionalLight);
 const hemisphereLight = new THREE.HemisphereLight(0xff0000, 0x0000ff, 1); // top, bottom, intensity
 scene.add(hemisphereLight);
 
-const pointLight = new THREE.PointLight(0xff9000, 0.5, 10, 2); // color, intensity, distance, decay
+const pointLight = new THREE.PointLight(0xff9000, 0.6, 10, 2); // color, intensity, distance, decay
 pointLight.position.set(1, 0.5, 1);
 scene.add(pointLight);
 
@@ -93,13 +93,16 @@ const pointLightHelper = new THREE.PointLightHelper(pointLight, 0.2);
 
 // const rectAreaLightHelper = new THREE.RectAreaLightHelper(rectAreaLight, 0.2);
 
-const spotLightHelper = new THREE.SpotLightHelper(spotLight, 0.2);
+const spotLightHelper = new THREE.SpotLightHelper(spotLight);
+window.requestAnimationFrame(() => {
+  spotLightHelper.update();
+});
 
 scene.add(hemisphereLightHelper);
 scene.add(directionalLightHelper);
 scene.add(pointLightHelper);
 // scene.add(rectAreaLightHelper);
-scene.add(spotLightHelper)
+scene.add(spotLightHelper);
 
 // Objects
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 32, 32), material);
