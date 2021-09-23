@@ -88,8 +88,18 @@ const directionalLightHelper = new THREE.DirectionalLightHelper(
   directionalLight,
   0.2
 );
-scene.add(directionalLightHelper)
+
+const pointLightHelper = new THREE.PointLightHelper(pointLight, 0.2);
+
+// const rectAreaLightHelper = new THREE.RectAreaLightHelper(rectAreaLight, 0.2);
+
+const spotLightHelper = new THREE.SpotLightHelper(spotLight, 0.2);
+
 scene.add(hemisphereLightHelper);
+scene.add(directionalLightHelper);
+scene.add(pointLightHelper);
+// scene.add(rectAreaLightHelper);
+scene.add(spotLightHelper)
 
 // Objects
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 32, 32), material);
