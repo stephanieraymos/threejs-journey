@@ -30,6 +30,8 @@ const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
 directionalLight.position.set(2, 2, -1);
 directionalLight.castShadow = true;
 
+directionalLight.shadow.camera.near = 1
+
 const directionalLightCamHelper = new THREE.CameraHelper(
   directionalLight.shadow.camera
 );
