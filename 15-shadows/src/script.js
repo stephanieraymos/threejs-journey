@@ -29,9 +29,11 @@ scene.add(ambientLight);
 const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
 directionalLight.position.set(2, 2, -1);
 directionalLight.castShadow = true;
-console.log(directionalLight.shadow);
 
-directionalLight.shadow.mapSize.width = 1024;
+// directionalLight.shadow.camera
+console.log(directionalLight.shadow.camera);
+
+directionalLight.shadow.mapSize.width = 1024; // Power of 2 value like mipmapping
 directionalLight.shadow.mapSize.height = 1024;
 
 gui.add(directionalLight, "intensity").min(0).max(1).step(0.001);
