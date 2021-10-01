@@ -43,6 +43,7 @@ console.log(directionalLight.shadow.camera)
 const directionalLightCamHelper = new THREE.CameraHelper(
   directionalLight.shadow.camera
 );
+directionalLightCamHelper.visible = false;
 scene.add(directionalLightCamHelper)
 
 
