@@ -47,14 +47,16 @@ const directionalLightCamHelper = new THREE.CameraHelper(
 directionalLightCamHelper.visible = false;
 scene.add(directionalLightCamHelper)
 
+const spotLight = new THREE.SpotLight(0xffffff, 0.5);
 
 
 gui.add(directionalLight, "intensity").min(0).max(1).step(0.001);
 gui.add(directionalLight.position, "x").min(-5).max(5).step(0.001);
 gui.add(directionalLight.position, "y").min(-5).max(5).step(0.001);
 gui.add(directionalLight.position, "z").min(-5).max(5).step(0.001);
+gui.add(spotLight, "intensity").min(0).max(1).step(0.001);
 scene.add(directionalLight);
-
+scene.add(spotLight)
 /**
  * Materials
  */
