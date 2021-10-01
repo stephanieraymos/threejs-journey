@@ -37,7 +37,7 @@ directionalLight.shadow.camera.bottom = -2
 directionalLight.shadow.camera.left = -2
 directionalLight.shadow.camera.near = 1 // Default is 0.5
 directionalLight.shadow.camera.far = 6 // Default is 500
-directionalLight.shadow.radius = 10;
+// directionalLight.shadow.radius = 10;
 
 console.log(directionalLight.shadow.camera)
 
