@@ -49,7 +49,7 @@ scene.add(directionalLightCamHelper)
 
 const spotLight = new THREE.SpotLight(0xffffff, 0.4, 10, Math.PI * 0.3);
 spotLight.castShadow = true;
-spotLight.getWorldPosition.set(0, 2, 2);
+spotLight.position.set(0, 2, 2);
 
 gui.add(directionalLight, "intensity").min(0).max(1).step(0.001);
 gui.add(directionalLight.position, "x").min(-5).max(5).step(0.001);
